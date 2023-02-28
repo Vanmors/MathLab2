@@ -3,6 +3,7 @@ package com.example.lab2spring;
 
 import com.example.lab2spring.Methods.Method1;
 import com.example.lab2spring.Methods.Method3;
+import com.example.lab2spring.Methods.Method5;
 import org.springframework.boot.Banner;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -41,6 +42,10 @@ public class NonlinearEquation {
         if (form.getMethod() == 3) {
             Method3 method3 = new Method3(form.getA(), form.getB(), form.getE());
             model.addAttribute("dataOut", method3.method());
+        }
+        if (form.getMethod() == 5) {
+            Method5 method5 = new Method5(form.getA(), form.getB(), form.getE());
+            model.addAttribute("dataOut", method5.method());
         }
 //        method3.method();
 //        System.out.println(form.getA());

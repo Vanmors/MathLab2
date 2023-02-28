@@ -38,9 +38,7 @@ public class Method3 implements Method {
             count++;
             xn = xnPlus1;
             xnPlus1 = xn - (function.myFunc(xn) / function.f1(xn));
-            System.out.println("xnPlus " + xnPlus1);
             xnMinusPreX = xnPlus1 - xn;
-            System.out.println("xMinus " + xnMinusPreX);
         }
         TableMethod1 tableMethod1 = new TableMethod1(count, xn, function.myFunc(xn));
         tableMethod1s.add(tableMethod1);

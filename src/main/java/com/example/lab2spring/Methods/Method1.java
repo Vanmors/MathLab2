@@ -26,7 +26,7 @@ public class Method1 implements Method {
         double aMinusB = e + 1;
         int count = 1;
         while (Math.abs(function.myFunc(x)) >= e && Math.abs(aMinusB) > e) {
-            out.outMethod2InConsole(count, a, b, x, function.myFunc(a), function.myFunc(b), function.myFunc(x), Math.abs(aMinusB));
+//            out.outMethod2InConsole(count, a, b, x, function.myFunc(a), function.myFunc(b), function.myFunc(x), Math.abs(aMinusB));
 //            TableMethod1 tableMethod1 = new TableMethod1(count, x, function.myFunc(x));
 //            tableMethod1s.add(tableMethod1);
             count++;
@@ -42,7 +42,7 @@ public class Method1 implements Method {
 //        System.out.println(Math.abs(function.myFunc(x)));
 ////        System.out.println(Math.abs(aMinusB));
         x = (a + b) / 2;
-        out.outMethod2InConsole(count, a, b, x, function.myFunc(a), function.myFunc(b), function.myFunc(x), Math.abs(aMinusB));
+//        out.outMethod2InConsole(count, a, b, x, function.myFunc(a), function.myFunc(b), function.myFunc(x), Math.abs(aMinusB));
         TableMethod1 tableMethod1 = new TableMethod1(count, x, function.myFunc(x));
         tableMethod1s.add(tableMethod1);
 //        System.out.println(x);
