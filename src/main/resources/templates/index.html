@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Hello world!-->
+<!--<h1 th:text="${something}"/>-->
+<form action="#" th:action="@{/form}" th:object="${form}" th:method="GET">
+    <div>
+        <label>1:</label>
+        <input type="radio" th:field="*{method}" name="method1" value="1"/>
+    </div>
+    <div>
+        <label>3:</label>
+        <input type="radio" th:field="*{method}" name="method3" value="3"/>
+    </div>
+    <div>
+        <label>5:</label>
+        <input type="radio" th:field="*{method}" name="method5" value="5"/>
+    </div>
+    <div>
+        <label>a:</label>
+        <input type="number" th:field="*{a}"/>
+    </div>
+    <div>
+        <label>b:</label>
+        <input type="number" th:field="*{b}"/>
+    </div>
+    <div>
+        <label>e:</label>
+        <input type="number" th:field="*{e}" step="any"/>
+    </div>
+    <input type="submit" value="Submit"/>
+</form>
+</body>
+</html>
+
+
+
+

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p><strong>method:</strong> <span th:text="${form.method}"></span></p>
+<p><strong>a:</strong> <span th:text="${form.a}"></span></p>
+<p><strong>b:</strong> <span th:text="${form.b}"></span></p>
+<p><strong>e:</strong> <span th:text="${form.e}"></span></p>
+
+
+<table>
+    <thead>
+    <tr>
+        <th>id</th>
+        <th>a</th>
+        <th>b</th>
+        <th>x</th>
+        <th>fa</th>
+        <th>fb</th>
+        <th>fx</th>
+        <th>|a-b|</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="tableMethod1: ${dataOut}">
+        <td th:text="${tableMethod1.id}"/>
+        <td th:text="${tableMethod1.a}"/>
+        <td th:text="${tableMethod1.a}"/>
+        <td th:text="${tableMethod1.b}"/>
+        <td th:text="${tableMethod1.x}"/>
+        <td th:text="${tableMethod1.fa}"/>
+        <td th:text="${tableMethod1.fb}"/>
+        <td th:text="${tableMethod1.fx}"/>
+        <td th:text="${tableMethod1.aMinusB}"/>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

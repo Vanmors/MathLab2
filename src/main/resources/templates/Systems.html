@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+В разработке
+<form action="#" th:action="@{/formSystem}" th:object="${systemsForm}" th:method="GET">
+    <div>
+        <label>i:</label>
+        <input type="number" th:field="*{i}"/>
+    </div>
+    <input type="submit" value="Submit"/>
+</form>
+</body>
+</html>
