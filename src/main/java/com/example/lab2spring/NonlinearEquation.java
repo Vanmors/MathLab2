@@ -2,6 +2,7 @@ package com.example.lab2spring;
 
 
 import com.example.lab2spring.Methods.Method1;
+import com.example.lab2spring.Methods.Method3;
 import org.springframework.boot.Banner;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -33,11 +34,19 @@ public class NonlinearEquation {
     @GetMapping("/form")
     public String save(Form form, Model model) {
         model.addAttribute("form", form);
-        Method1 method1 = new Method1(form.getA(), form.getB(), form.getE());
+        if (form.getMethod() == 1) {
+            Method1 method1 = new Method1(form.getA(), form.getB(), form.getE());
+            model.addAttribute("dataOut", method1.method());
+        }
+        if (form.getMethod() == 3) {
+            Method3 method3 = new Method3(form.getA(), form.getB(), form.getE());
+            model.addAttribute("dataOut", method3.method());
+        }
+//        method3.method();
 //        System.out.println(form.getA());
 //        System.out.println(form.getB());
 //        System.out.println(form.getE());
-        model.addAttribute("dataOut", method1.method());
+
         return "smt";
     }
 

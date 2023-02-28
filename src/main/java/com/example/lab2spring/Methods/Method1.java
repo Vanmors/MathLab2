@@ -19,6 +19,7 @@ public class Method1 implements Method {
     Function function = new Function();
     Out out = new Out();
 
+    @Override
     public List<TableMethod1> method() {
         List<TableMethod1> tableMethod1s = new ArrayList<>();
         double x = e + 1;
@@ -26,8 +27,8 @@ public class Method1 implements Method {
         int count = 1;
         while (Math.abs(function.myFunc(x)) >= e && Math.abs(aMinusB) > e) {
             out.outMethod2InConsole(count, a, b, x, function.myFunc(a), function.myFunc(b), function.myFunc(x), Math.abs(aMinusB));
-            TableMethod1 tableMethod1 = new TableMethod1(count, a, b, x, function.myFunc(a), function.myFunc(b), function.myFunc(x), Math.abs(aMinusB));
-            tableMethod1s.add(tableMethod1);
+//            TableMethod1 tableMethod1 = new TableMethod1(count, x, function.myFunc(x));
+//            tableMethod1s.add(tableMethod1);
             count++;
             x = (a + b) / 2;
             if (function.myFunc(a) * function.myFunc(x) > 0) {
@@ -42,7 +43,7 @@ public class Method1 implements Method {
 ////        System.out.println(Math.abs(aMinusB));
         x = (a + b) / 2;
         out.outMethod2InConsole(count, a, b, x, function.myFunc(a), function.myFunc(b), function.myFunc(x), Math.abs(aMinusB));
-        TableMethod1 tableMethod1 = new TableMethod1(count, a, b, x, function.myFunc(a), function.myFunc(b), function.myFunc(x), Math.abs(aMinusB));
+        TableMethod1 tableMethod1 = new TableMethod1(count, x, function.myFunc(x));
         tableMethod1s.add(tableMethod1);
 //        System.out.println(x);
 //        System.out.println(function.myFunc(x));
