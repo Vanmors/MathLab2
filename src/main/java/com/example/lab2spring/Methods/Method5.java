@@ -10,11 +10,13 @@ public class Method5 implements Method {
     private double a;
     private double b;
     private double e;
+    private int number;
 
-    public Method5(double a, double b, double e) {
+    public Method5(double a, double b, double e, int number) {
         this.a = a;
         this.b = b;
         this.e = e;
+        this.number = number;
     }
 
     @Override
@@ -23,32 +25,29 @@ public class Method5 implements Method {
         Function function = new Function();
         double start_X, last_X, q, abs;
         double lambda = 1;
-        int count = 0;
+        int count = 1;
 
-        lambda = -1 / function.getMax(a, b);
-        last_X = function.setStartX(a, b);
-        start_X = function.Fi(last_X, lambda);
+        lambda = -1 / function.getMax(a, b, number);
 
-        q = function.getMaxQ(a, b, lambda);
-        System.out.println(q);
-        System.out.println("lamda " + lambda);
+
+        if (function.f1(a, number) < function.f1(b, number)) {
+            last_X = b;
+        } else {
+            last_X = a;
+        }
+        start_X = function.Fi(last_X, lambda, number);
+        q = function.getMaxQ(a, b, lambda, number);
         if (q > 0 && q < 1) {
             abs = Math.abs(start_X - last_X);
 
             while (abs > e) {
 
                 last_X = start_X;
-                start_X = function.Fi(last_X, lambda);
+                start_X = function.Fi(last_X, lambda, number);
                 abs = Math.abs(start_X - last_X);
                 count++;
-                System.out.println(count);
-                System.out.println("startX" + start_X);
-                System.out.println("f(x)" + function.myFunc(start_X));
             }
-//            System.out.println(count);
-//            System.out.println(start_X);
-//            System.out.println(function.myFunc(start_X));
-            TableMethod1 tableMethod1 = new TableMethod1(count, start_X, function.myFunc(start_X));
+            TableMethod1 tableMethod1 = new TableMethod1(count, start_X, function.myFunc(start_X, number));
             tableMethod1s.add(tableMethod1);
             return tableMethod1s;
         }

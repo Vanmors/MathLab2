@@ -10,8 +10,14 @@
 <p><strong>b:</strong> <span th:text="${form.b}"></span></p>
 <p><strong>e:</strong> <span th:text="${form.e}"></span></p>
 
-<!--<span th:if="${form.method == 1}">-->
-<table>
+<span th:if="${form.method != 1 && form.method != 3 && form.method != 5}">
+    Были введены неверные данные либо не был указан метод решения уравнений!
+    <p></p>
+    Вернитесь и введите всё корректно.
+    <p></p>
+    <a href="/lineSegment"> Назад </a>
+</span>
+<table border="1">
     <thead>
     <tr>
         <th>count</th>
@@ -23,6 +29,7 @@
     <tr th:each="tableMethod1: ${dataOut}">
         <td th:text="${tableMethod1.count}"/>
         <td th:text="${tableMethod1.x}"/>
+        &nbsp;
         <td th:text="${tableMethod1.fx}"/>
     </tr>
     </tbody>

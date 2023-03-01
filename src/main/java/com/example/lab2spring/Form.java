@@ -12,6 +12,7 @@ public class Form {
     private Double a;
     private Double b;
     private Double e;
+    private int numberOfFunction;
 
 //    public Form(Double a, Double b, Double e){
 //        this.a = a;

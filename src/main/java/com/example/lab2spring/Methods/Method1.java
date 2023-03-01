@@ -9,11 +9,13 @@ public class Method1 implements Method {
     private double a;
     private double b;
     private double e;
+    private int number;
 
-    public Method1(double a, double b, double e) {
+    public Method1(double a, double b, double e, int number) {
         this.a = a;
         this.b = b;
         this.e = e;
+        this.number = number;
     }
 
     Function function = new Function();
@@ -25,13 +27,13 @@ public class Method1 implements Method {
         double x = e + 1;
         double aMinusB = e + 1;
         int count = 1;
-        while (Math.abs(function.myFunc(x)) >= e && Math.abs(aMinusB) > e) {
+        while (Math.abs(function.myFunc(x, number)) >= e && Math.abs(aMinusB) > e) {
 //            out.outMethod2InConsole(count, a, b, x, function.myFunc(a), function.myFunc(b), function.myFunc(x), Math.abs(aMinusB));
 //            TableMethod1 tableMethod1 = new TableMethod1(count, x, function.myFunc(x));
 //            tableMethod1s.add(tableMethod1);
             count++;
             x = (a + b) / 2;
-            if (function.myFunc(a) * function.myFunc(x) > 0) {
+            if (function.myFunc(a, number) * function.myFunc(x, number) > 0) {
                 a = x;
             } else {
                 b = x;
@@ -43,7 +45,7 @@ public class Method1 implements Method {
 ////        System.out.println(Math.abs(aMinusB));
         x = (a + b) / 2;
 //        out.outMethod2InConsole(count, a, b, x, function.myFunc(a), function.myFunc(b), function.myFunc(x), Math.abs(aMinusB));
-        TableMethod1 tableMethod1 = new TableMethod1(count, x, function.myFunc(x));
+        TableMethod1 tableMethod1 = new TableMethod1(count, x, function.myFunc(x, number));
         tableMethod1s.add(tableMethod1);
 //        System.out.println(x);
 //        System.out.println(function.myFunc(x));

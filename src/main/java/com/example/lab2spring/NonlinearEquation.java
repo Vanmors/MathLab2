@@ -36,17 +36,20 @@ public class NonlinearEquation {
     public String save(Form form, Model model) {
         model.addAttribute("form", form);
         if (form.getMethod() == 1) {
-            Method1 method1 = new Method1(form.getA(), form.getB(), form.getE());
+            Method1 method1 = new Method1(form.getA(), form.getB(), form.getE(), form.getNumberOfFunction());
             model.addAttribute("dataOut", method1.method());
         }
         if (form.getMethod() == 3) {
-            Method3 method3 = new Method3(form.getA(), form.getB(), form.getE());
+            Method3 method3 = new Method3(form.getA(), form.getB(), form.getE(), form.getNumberOfFunction());
             model.addAttribute("dataOut", method3.method());
         }
         if (form.getMethod() == 5) {
-            Method5 method5 = new Method5(form.getA(), form.getB(), form.getE());
+            Method5 method5 = new Method5(form.getA(), form.getB(), form.getE(), form.getNumberOfFunction());
             model.addAttribute("dataOut", method5.method());
         }
+//        else {
+//            return "ErrorPage";
+//        }
 //        method3.method();
 //        System.out.println(form.getA());
 //        System.out.println(form.getB());
