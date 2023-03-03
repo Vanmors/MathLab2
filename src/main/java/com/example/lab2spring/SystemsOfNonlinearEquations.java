@@ -41,7 +41,6 @@ public class SystemsOfNonlinearEquations {
     @GetMapping("/formSystem")
     public String save(@ModelAttribute SystemsForm systemsForm) {
 //        model.addAttribute("formSystems", systemsForm);
-        System.out.println("ok");
         return "SystemResult";
     }
 }

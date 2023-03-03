@@ -1,9 +1,18 @@
 package com.example.lab2spring.Methods;
 
+import com.example.lab2spring.Chart.DrawChart;
 import com.example.lab2spring.Tables.TableMethod1;
+import jakarta.servlet.http.HttpServletResponse;
+import org.jfree.chart.JFreeChart;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.io.IOException;
+import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.List;
+
+import static org.jfree.chart.ChartUtils.writeChartAsJPEG;
 
 public class Method1 implements Method {
     private double a;
@@ -17,7 +26,14 @@ public class Method1 implements Method {
         this.e = e;
         this.number = number;
     }
+//    @GetMapping("/uploadimage") public String displayUploadForm() {
+//        return "imageupload/index";
+//    }
 
+
+
+
+    DrawChart drawChart = new DrawChart();
     Function function = new Function();
     Out out = new Out();
 
@@ -50,6 +66,10 @@ public class Method1 implements Method {
 //        System.out.println(x);
 //        System.out.println(function.myFunc(x));
 //        System.out.println(count + 1);
+
+        drawChart.draw(Math.round(a), Math.round(b), number);
         return tableMethod1s;
     }
+
+
 }

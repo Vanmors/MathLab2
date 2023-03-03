@@ -1,6 +1,7 @@
 package com.example.lab2spring;
 
 
+import com.example.lab2spring.Chart.UploadChart;
 import com.example.lab2spring.Methods.Method1;
 import com.example.lab2spring.Methods.Method3;
 import com.example.lab2spring.Methods.Method5;
@@ -34,6 +35,10 @@ public class NonlinearEquation {
 //    }
     @GetMapping("/form")
     public String save(Form form, Model model) {
+        UploadChart uploadChart = new UploadChart();
+        uploadChart.aChart = form.getA();
+        uploadChart.bChart = form.getB();
+        uploadChart.numberChart = form.getNumberOfFunction();
         model.addAttribute("form", form);
         if (form.getMethod() == 1) {
             Method1 method1 = new Method1(form.getA(), form.getB(), form.getE(), form.getNumberOfFunction());

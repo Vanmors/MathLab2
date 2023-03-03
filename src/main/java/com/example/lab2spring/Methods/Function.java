@@ -4,14 +4,15 @@ public class Function {
 
     public double myFunc(double x, int number) {
         if (number == 1) {
-            return Math.pow(x, 3) - 4.5 * Math.pow(x, 2) - 9.21 * x - 0.383;
+//            return Math.pow(x, 3) - 4.5 * Math.pow(x, 2) - 9.21 * x - 0.383;
+            return Math.pow(x, 3) - x + 4;
         } else if (number == 2) {
             return Math.pow(x, 3) + 1.41 * Math.pow(x, 2) - 5.472 * x - 7.38;
         } else if (number == 3) {
             return Math.pow(x, 3) - 0.12 * Math.pow(x, 2) - 1.475 * x - 0.192;
         }
         return Math.pow(x, 3) - 4.5 * Math.pow(x, 2) - 9.21 * x - 0.383;
-//        return Math.pow(x, 3) - x + 4;
+
     }
 
     public double f1(double x, int number) {
@@ -55,13 +56,16 @@ public class Function {
         return Math.max(Math.abs(Fi_(a, lambda, number)), Math.abs(Fi_(b, lambda, number)));
     }
 
-    public double setStartX(double a, double b, int number) {
-        if (myFunc(a, number) * f2(a, number) > 0) {
-            return a;
-        } else if (myFunc(b, number) * f2(b, number) > 0) {
-            return b;
-        } else {
-            return 1;
+    public XYForm myFuncSystem(double x0, double y0, int number) {
+        double x = 0;
+        double y = 0;
+        if (number == 1) {
+            x = Math.pow(x0, 2) + Math.pow(y0, 2) - 4;
+            y = 3 * Math.pow(x, 2) - y;
         }
+        else if (number == 2){
+
+        }
+        return new XYForm(x, y);
     }
 }

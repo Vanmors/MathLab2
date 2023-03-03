@@ -3,13 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0-rc.1/dist/katex.min.css" integrity="sha384-D+9gmBxUQogRLqvARvNLmA9hS2x//eK1FhVb9PiU86gmcrBrJAQT8okdJ4LMp2uv" crossorigin="anonymous">
+
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.10.0-rc.1/dist/katex.min.js" integrity="sha384-483A6DwYfKeDa0Q52fJmxFXkcPCFfnXMoXblOkJ4JcA8zATN6Tm78UNL72AKk+0O" crossorigin="anonymous"></script>
+
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0-rc.1/dist/contrib/auto-render.min.js" integrity="sha384-yACMu8JWxKzSp/C1YV86pzGiQ/l1YUfE8oPuahJQxzehAjEt2GiQuy/BIvl9KyeF" crossorigin="anonymous"
+            onload="renderMathInElement(document.body);"></script>
 </head>
 <body>
-В разработке
 <form action="#" th:action="@{/formSystem}" th:object="${systemsForm}" th:method="GET">
+    Выбор уравнения:
     <div>
-        <label>i:</label>
-        <input type="number" th:field="*{i}"/>
+        <label>1:</label>
+        <input type="radio" th:field="*{numberOfSystem}" name="method1" value="1"/>
+        <img src="../static/СистемаУравнений1.1.png" width="167" th:src="@{СистемаУравнений1.1.png}"/>
+<!--        \(x^2 + y^2 - 4=0\),-->
+<!--        <p></p>-->
+<!--        \(-3x^2 + y =0\)-->
+    </div>
+    <div>
+
+        <label>2:</label>
+        <input type="radio" th:field="*{numberOfSystem}" name="method3" value="2"/>
+        <img src="../static/СистемаУравнений1.1.png" width="167" th:src="@{СистемаУравнений1.1.png}"/>
+        <p></p>
+    </div>
+    <div>
+        <label>x0:</label>
+        <input type="number" th:field="*{x0}" required step="any"/>
+        <p></p>
+    </div>
+    <div>
+        <label>y0:</label>
+        <input type="number" th:field="*{y0}" required step="any"/>
+        <p></p>
+    </div>
+    <div>
+        <label>e:</label>
+        <input type="number" th:field="*{e}" required step="any"/>
+        <p></p>
     </div>
     <input type="submit" value="Submit"/>
 </form>
