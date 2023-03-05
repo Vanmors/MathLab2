@@ -1,5 +1,6 @@
 package com.example.lab2spring;
 
+import com.example.lab2spring.Methods.MethodForSystem;
 import org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -32,15 +33,17 @@ public class SystemsOfNonlinearEquations {
     }
 
 
-
-//    @GetMapping("/formSystem")
+    //    @GetMapping("/formSystem")
 //    public String save(SystemsForm systemsForm, Model model) {
 //        model.addAttribute("formSystems", systemsForm);
 //        return "SystemResult";
 //    }
     @GetMapping("/formSystem")
-    public String save(@ModelAttribute SystemsForm systemsForm) {
-//        model.addAttribute("formSystems", systemsForm);
+    public String save(SystemsForm systemsForm, Model model) {
+
+        MethodForSystem m = new MethodForSystem(systemsForm.getNumberOfSystem(), systemsForm.getX0(), systemsForm.getY0(), systemsForm.getE());
+
+        model.addAttribute("formSystems", m.method());
         return "SystemResult";
     }
 }

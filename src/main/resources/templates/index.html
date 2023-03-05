@@ -18,53 +18,58 @@
 </head>
 <body>
 <form action="#" th:action="@{/form}" th:object="${form}" th:method="GET">
-    Выбор уравнения:
-    <div>
-        <label>1:</label>
-        <input type="radio" th:field="*{numberOfFunction}" value="1"/>
-        \(x^3 - 4,5*x^2 - 9,21*x - 0,383\)
-    </div>
-    <div>
-        <label>2:</label>
-        <input type="radio" th:field="*{numberOfFunction}" value="2"/>
-        \(x^3 + 1,41*x^2 - 5,472*x - 7,38\)
-    </div>
-    <div>
-        <label>3:</label>
-        <input type="radio" th:field="*{numberOfFunction}" value="3"/>
-        \(x^3 - 0,12*x^2 - 1,475*x + 0,192\)
-    </div>
-    Выбор метода решения уравнения:
-    <div>
-        <label>1:</label>
-        <input type="radio" th:field="*{method}" name="method1" value="1"/>
-    </div>
-    <div>
-        <label>3:</label>
-        <input type="radio" th:field="*{method}" name="method3" value="3"/>
-    </div>
-    <div>
-        <label>5:</label>
-        <input type="radio" th:field="*{method}" name="method5" value="5"/>
-    </div>
-    <p></p>
-    <div>
-        Введите интервал и точность.
-        <p/>
-        <label>a:</label>
-        <input type="number" th:field="*{a}" required/>
-    </div>
-    <div>
-        <p/>
-        <label>b:</label>
-        <input type="number" th:field="*{b}" required/>
-    </div>
-    <div>
-        <p/>
-        <label>e:</label>
-        <input type="number" th:field="*{e}" step="any" required/>
-    </div>
-    <input type="submit" value="Submit"/>
+    <form action="#" th:action="@{/reports}" th:object="${form}" th:method="GET">
+        Выбор уравнения:
+        <div>
+            <label>1:</label>
+            <input type="radio" th:field="*{numberOfFunction}" value="1"/>
+            \(x^3 - 4,5*x^2 - 9,21*x - 0,383\)
+        </div>
+        <div>
+            <label>2:</label>
+            <input type="radio" th:field="*{numberOfFunction}" value="2"/>
+            \(x^3 + 1,41*x^2 - 5,472*x - 7,38\)
+        </div>
+        <div>
+            <label>3:</label>
+            <input type="radio" th:field="*{numberOfFunction}" value="3"/>
+            \(x^3 - 0,12*x^2 - 1,475*x + 0,192\)
+        </div>
+        Выбор метода решения уравнения:
+        <div>
+            <label>1:</label>
+            <input type="radio" th:field="*{method}" name="method1" value="1"/>
+            Метод половинного деления
+        </div>
+        <div>
+            <label>3:</label>
+            <input type="radio" th:field="*{method}" name="method3" value="3"/>
+            Метод Ньютона
+        </div>
+        <div>
+            <label>5:</label>
+            <input type="radio" th:field="*{method}" name="method5" value="5"/>
+            Метод простой итерациия
+        </div>
+        <p></p>
+        <div>
+            Введите интервал и точность.
+            <p/>
+            <label>a:</label>
+            <input type="number" th:field="*{a}" required step="any"/>
+        </div>
+        <div>
+            <p/>
+            <label>b:</label>
+            <input type="number" th:field="*{b}" required step="any"/>
+        </div>
+        <div>
+            <p/>
+            <label>e:</label>
+            <input type="number" th:field="*{e}" step="any" required/>
+        </div>
+        <input type="submit" value="Submit"/>
+    </form>
 </form>
 </body>
 </html>

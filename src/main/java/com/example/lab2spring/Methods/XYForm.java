@@ -7,7 +7,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-@AllArgsConstructor
+//@AllArgsConstructor
 public class XYForm {
 
     private double x;

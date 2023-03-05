@@ -38,13 +38,13 @@ public class DrawChart {
 //        UploadChart uploadChart = new UploadChart();
 //        uploadChart.setChart(lineChart);
 
-        try {
-            ChartUtils.saveChartAsJPEG(new File("src/main/res/Chart.jpeg"), lineChart, width, height);
-
-
-        } catch (IOException e) {
-            System.out.println(e.getMessage());
-        }
+//        try {
+//            ChartUtils.saveChartAsJPEG(new File("src/main/res/Chart.jpeg"), lineChart, width, height);
+//
+//
+//        } catch (IOException e) {
+//            System.out.println(e.getMessage());
+//        }
         return lineChart;
     }
 
@@ -80,7 +80,6 @@ public class DrawChart {
 
         a = a - 1;
         b = b + 1;
-
 
         XYSeries function = new XYSeries("function");
         double len = b-a;

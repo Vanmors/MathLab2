@@ -67,7 +67,7 @@ public class Method1 implements Method {
 //        System.out.println(function.myFunc(x));
 //        System.out.println(count + 1);
 
-        drawChart.draw(Math.round(a), Math.round(b), number);
+//        drawChart.draw(Math.round(a), Math.round(b), number);
         return tableMethod1s;
     }
 

@@ -27,10 +27,11 @@ public class Method3 implements Method {
         Function function = new Function();
         List<TableMethod1> tableMethod1s = new ArrayList<>();
         double x0;
-        if (function.myFunc(a, number) < 0 && function.myFunc(b, number) > 0 && function.f2(a, number) < 0) {
+//        if (function.myFunc(a, number) < 0 && function.myFunc(b, number) > 0 && function.f2(a, number) < 0) {
+        if (function.myFunc(a, number) * function.f2(a, number) > 0) {
             x0 = a;
         } else {
-            return null;
+            x0 = b;
         }
         double xnMinusPreX = e + 1;
         double xn = x0;

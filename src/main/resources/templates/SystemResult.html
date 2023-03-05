@@ -9,5 +9,23 @@
 <p><strong>x0:</strong> <span th:text="${systemsForm.x0}"></span></p>
 <p><strong>y0:</strong> <span th:text="${systemsForm.y0}"></span></p>
 <p><strong>e:</strong> <span th:text="${systemsForm.e}"></span></p>
+<table border="1">
+    <thead>
+    <tr>
+        <th>count</th>
+        <th>x</th>
+        <th>y</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="tableMethod1: ${formSystems}">
+        <td th:text="${tableMethod1.count}"/>
+        <td th:text="${tableMethod1.x}"/>
+        &nbsp;
+        <td th:text="${tableMethod1.fx}"/>
+    </tr>
+    </tbody>
+</table>
+<img src="/chartSystem" width="1000" th:src="@{/chartSystem}"/>
 </body>
 </html>
