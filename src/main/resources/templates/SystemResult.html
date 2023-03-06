@@ -9,6 +9,14 @@
 <p><strong>x0:</strong> <span th:text="${systemsForm.x0}"></span></p>
 <p><strong>y0:</strong> <span th:text="${systemsForm.y0}"></span></p>
 <p><strong>e:</strong> <span th:text="${systemsForm.e}"></span></p>
+<span th:if="${systemsForm.getNumberOfSystem() != 1 && systemsForm.getNumberOfSystem() != 2 }">
+    Были введены неверные данные либо не был указан метод решения уравнений!
+    <p></p>
+    Вернитесь и введите всё корректно.
+    <p></p>
+    <a href="/Systems"> Назад </a>
+</span>
+<span th:if="${not #lists.isEmpty(formSystems)}">
 <table border="1">
     <thead>
     <tr>
@@ -27,5 +35,6 @@
     </tbody>
 </table>
 <img src="/chartSystem" width="1000" th:src="@{/chartSystem}"/>
+</span>
 </body>
 </html>

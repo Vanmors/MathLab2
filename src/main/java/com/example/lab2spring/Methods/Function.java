@@ -1,7 +1,6 @@
 package com.example.lab2spring.Methods;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class Function {
 
@@ -59,18 +58,6 @@ public class Function {
         return Math.max(Math.abs(Fi_(a, lambda, number)), Math.abs(Fi_(b, lambda, number)));
     }
 
-//    public XYForm myFuncSystem(double x0, double y0, int number) {
-//        double x = 0;
-//        double y = 0;
-//        if (number == 1) {
-//            x = Math.pow(x0, 2) + Math.pow(y0, 2) - 4;
-//            y = 3 * Math.pow(x, 2) - y;
-//        } else if (number == 2) {
-//
-//        }
-//        return new XYForm(x, y);
-//    }
-
     public double[][] f1IterationForSystem(double x, double y, int number) {
         ArrayList<Double> matrixList = new ArrayList<>();
         if (number == 1) {
@@ -81,26 +68,13 @@ public class Function {
             matrixList.add(-6 * x);
             matrixList.add(1.0);
             matrixList.add(3 * Math.pow(x, 2) - y);
-        }
-//        for (double out: matrixList){
-//            System.out.println(out);
-//        }
-        else if (number == 2) {
-//            matrixList.add(1.0);
-////            System.out.println(2 * x);
-//            matrixList.add(1.0);
-//            matrixList.add(8 - x - y);
-//            matrixList.add(2 * x);
-//            matrixList.add(2 * y);
-//            matrixList.add(82 - Math.pow(x, 2) - Math.pow(x, 2));
+        } else if (number == 2) {
             matrixList.add(2 * x);
-//            System.out.println(2 * x);
             matrixList.add(2 * y);
             matrixList.add(2 - Math.pow(x, 2) - Math.pow(y, 2));
             matrixList.add(-6 * x);
             matrixList.add(1.0);
             matrixList.add(4 * Math.pow(x, 2) - y);
-
         }
         int size = 2;
         double[][] matrix = new double[size][size + 1];
@@ -109,8 +83,7 @@ public class Function {
             for (int j = 0; j < size + 1; j++) {
                 try {
                     matrix[i][j] = matrixList.get(index);
-                }
-                catch (IndexOutOfBoundsException e){
+                } catch (IndexOutOfBoundsException e) {
                     return null;
                 }
                 index++;
