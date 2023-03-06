@@ -1,5 +1,6 @@
 package com.example.lab2spring;
 
+import com.example.lab2spring.Chart.UploadChart;
 import com.example.lab2spring.Methods.MethodForSystem;
 import org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration;
 import org.springframework.stereotype.Controller;
@@ -40,7 +41,7 @@ public class SystemsOfNonlinearEquations {
 //    }
     @GetMapping("/formSystem")
     public String save(SystemsForm systemsForm, Model model) {
-
+        UploadChart.numberChart = systemsForm.getNumberOfSystem();
         MethodForSystem m = new MethodForSystem(systemsForm.getNumberOfSystem(), systemsForm.getX0(), systemsForm.getY0(), systemsForm.getE());
 
         model.addAttribute("formSystems", m.method());

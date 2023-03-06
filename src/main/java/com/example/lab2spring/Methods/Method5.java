@@ -29,7 +29,6 @@ public class Method5 implements Method {
 
         lambda = -1 / function.getMax(a, b, number);
 
-
         if (function.f1(a, number) < function.f1(b, number)) {
             last_X = b;
         } else {
@@ -41,7 +40,6 @@ public class Method5 implements Method {
             abs = Math.abs(start_X - last_X);
 
             while (abs > e) {
-
                 last_X = start_X;
                 start_X = function.Fi(last_X, lambda, number);
                 abs = Math.abs(start_X - last_X);

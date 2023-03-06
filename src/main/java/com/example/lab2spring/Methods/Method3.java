@@ -17,9 +17,6 @@ public class Method3 implements Method {
         this.e = e;
         this.number = number;
     }
-//    int a = -2;
-//    int b = -1;
-//    double e = 0.01;
 
 
     @Override
@@ -27,7 +24,6 @@ public class Method3 implements Method {
         Function function = new Function();
         List<TableMethod1> tableMethod1s = new ArrayList<>();
         double x0;
-//        if (function.myFunc(a, number) < 0 && function.myFunc(b, number) > 0 && function.f2(a, number) < 0) {
         if (function.myFunc(a, number) * function.f2(a, number) > 0) {
             x0 = a;
         } else {

@@ -1,6 +1,5 @@
 package com.example.lab2spring.Methods;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,8 +7,8 @@ public class Function {
 
     public double myFunc(double x, int number) {
         if (number == 1) {
-//            return Math.pow(x, 3) - 4.5 * Math.pow(x, 2) - 9.21 * x - 0.383;
-            return Math.pow(x, 3) - x + 4;
+            return Math.pow(x, 3) - 4.5 * Math.pow(x, 2) - 9.21 * x - 0.383;
+//            return Math.pow(x, 3) - x + 4;
         } else if (number == 2) {
             return Math.pow(x, 3) + 1.41 * Math.pow(x, 2) - 5.472 * x - 7.38;
         } else if (number == 3) {
@@ -87,20 +86,33 @@ public class Function {
 //            System.out.println(out);
 //        }
         else if (number == 2) {
-            matrixList.add(1.0);
-//            System.out.println(2 * x);
-            matrixList.add(1.0);
-            matrixList.add(8 - x - y);
+//            matrixList.add(1.0);
+////            System.out.println(2 * x);
+//            matrixList.add(1.0);
+//            matrixList.add(8 - x - y);
+//            matrixList.add(2 * x);
+//            matrixList.add(2 * y);
+//            matrixList.add(82 - Math.pow(x, 2) - Math.pow(x, 2));
             matrixList.add(2 * x);
+//            System.out.println(2 * x);
             matrixList.add(2 * y);
-            matrixList.add(82 - Math.pow(x, 2) - Math.pow(x, 2));
+            matrixList.add(2 - Math.pow(x, 2) - Math.pow(y, 2));
+            matrixList.add(-6 * x);
+            matrixList.add(1.0);
+            matrixList.add(4 * Math.pow(x, 2) - y);
+
         }
         int size = 2;
         double[][] matrix = new double[size][size + 1];
         int index = 0;
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size + 1; j++) {
-                matrix[i][j] = matrixList.get(index);
+                try {
+                    matrix[i][j] = matrixList.get(index);
+                }
+                catch (IndexOutOfBoundsException e){
+                    return null;
+                }
                 index++;
             }
         }

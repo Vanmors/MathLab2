@@ -68,37 +68,41 @@ public class DrawChartForSystems {
     public JFreeChart draw(double a, double b, int number) {
         XYSeriesCollection lineDataset = new XYSeriesCollection();
 
-//        a = a - 1;
-//        b = b + 1;
-        double x = 1;
-        double y = 2;
         XYSeries function1 = new XYSeries("function1");
         XYSeries function2 = new XYSeries("function2");
-        XYSeries function3 = new XYSeries("function3");
+//        XYSeries function3 = new XYSeries("function3");
         double len = 4;
-        for (double i = 2; i >= -2; i -= len / 12) {
-//            System.out.println("i " + i);
-            System.out.println(systemFuncForChart.systemsExpression1(i, 1));
-            function1.add(i,  systemFuncForChart.systemsExpression1(i, 1));
-        }
-        for (double i = 2; i >= -2; i -= len / 12) {
-//            System.out.println("i " + i);
-            System.out.println(-1 * systemFuncForChart.systemsExpression1(i, 1));
-            function3.add(i, -1 * systemFuncForChart.systemsExpression1(i, 1));
-        }
-
-        for (double i = -1; i <= 1; i += len / 12) {
+        if (number == 1) {
+            for (double i = 2; i >= -2; i -= len / 20) {
+                function1.add(i, systemFuncForChart.systemsExpression1(i, 1));
+            }
+            for (double i = -2; i <= 2; i += len / 20) {
+                function2.add(i, systemFuncForChart.systemsExpression2(i, 1, 1));
+            }
+        } else {
+            for (double i = 1.4; i >= -1 * 1.4; i -= len / 20) {
+                function1.add(i, systemFuncForChart.systemsExpression1(i, 2));
+            }
+            for (double i = -2; i <= 2; i += len / 20) {
 //            System.out.println(systemFuncForChart.systemsExpression2(i, 1, 1));
-            function2.add(i, systemFuncForChart.systemsExpression2(i, 1, 1));
+                function2.add(i, systemFuncForChart.systemsExpression2(i, 1, 2));
+            }
         }
+//        for (double i = -2; i <= 2; i += len / 20) {
+////            System.out.println("i " + i);
+////            System.out.println(-1 * systemFuncForChart.systemsExpression1(i, 1));
+//            function1.add(i, -1 * systemFuncForChart.systemsExpression1(i, 1));
+//        }
+
+
         XYSeries zero = new XYSeries("zero");
-        zero.add(-3, 0);
-        zero.add(3, 0);
+        zero.add(-4, 0);
+        zero.add(4, 0);
 
 
         lineDataset.addSeries(function1);
         lineDataset.addSeries(function2);
-        lineDataset.addSeries(function3);
+//        lineDataset.addSeries(function3);
         lineDataset.addSeries(zero);
 
         return rawDraw(lineDataset);
